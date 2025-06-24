@@ -1,7 +1,3 @@
-`ifndef INST_SET_VH
-`define INST_SET_VH
-
-`include "macros.vh"
 
 /****指令类型判断*****/
 `define TYPE_I ((~op[6] && ~op[5] && (op[4]+1) && ~op[3] && ~op[2] && op[1] && op[0]) || (op[6] && op[5] && ~op[4] && ~op[3] && op[2] && op[1] && op[0]))
@@ -304,7 +300,6 @@ module ysyx_22050499_ALU #(DATA_WITDH = 32) (
 
 
 endmodule
-`include "macros.vh"
 `ifdef CONFIG_STA_MODE
 import "DPI-C" function void npc_assert(input int addr);
 `endif
@@ -766,7 +761,6 @@ module ysyx_22050499_AXI_BUS (
     end
   end
 endmodule
-`include "macros.vh"
 module ysyx_22050499_CLINT (
     input             clock,
     input             reset,
@@ -875,7 +869,6 @@ module ysyx_22050499_EXP(
                 ( ExtOp[2] & ~ExtOp[1] & ~ExtOp[0] ? immJ : 32'b0))));
     
 endmodule
-`include "macros.vh"
 `ifdef CONFIG_STA_MODE
 import "DPI-C" function void npc_trap();
 import "DPI-C" function void isa_csrs_display();
@@ -1075,7 +1068,6 @@ module ysyx_22050499_GPRs #(
 
 endmodule
 
-`include "macros.vh"
 module ysyx_22050499_ICACHE (
     input clock,
     input reset,
@@ -1188,8 +1180,6 @@ module ysyx_22050499_ICACHE (
   end
 
 endmodule
-`include "macros.vh"
-`include "inst_set.vh"
 
 module ysyx_22050499_IDU (
     input              clock,
@@ -1508,7 +1498,6 @@ module ysyx_22050499_IDU (
 
 endmodule
 
-`include "macros.vh"
 `ifdef CONFIG_STA_MODE
 import "DPI-C" function void get_cache_amat(input int hit,input int start_end);
 `endif
@@ -1863,7 +1852,6 @@ module ysyx_22050499_MEM (
 
 endmodule
 
-`include "macros.vh"
 `ifdef CONFIG_STA_MODE
 import "DPI-C" function int pmem_read(input int raddr);
 import "DPI-C" function void pmem_write(input int waddr, input int wdata, input byte wmask);
@@ -1968,7 +1956,6 @@ module ysyx_22050499_STATUS (
 // status = D: LOAD: 写Rd
 
 endmodule
-`include "macros.vh"
 module ysyx_22050499_UART(
     input               clock,
     input               reset,
@@ -2039,7 +2026,6 @@ module ysyx_22050499_UART(
     end
 
 endmodule
-`include "macros.vh"
 `ifdef CONFIG_STA_MODE
 import "DPI-C" function void update_perf_counter(input int tags);
 import "DPI-C" function void npc_update_pc(input int addr);
@@ -2461,7 +2447,6 @@ module ysyx_22050499 (
 
 
 endmodule
-`include "macros.vh"
 module ysyx_22050499_WB (
     input               clock,
     input               reset,
