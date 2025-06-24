@@ -82,7 +82,6 @@
 `define INST_FENCE_I `INSTPAT_2(3'b001,7'b0001111)
 
 
-`endif
 `ifndef MACROS_VH
 `define MACROS_VH
 
